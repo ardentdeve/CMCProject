@@ -15,6 +15,9 @@ if(anyErrors!=null)
 	{
 		out.println("database error");
 	}
+	else if (anyErrors.equals("-4")){
+        out.println("<h1>YOU MUST BE LOGGED IN TO ACCESS SYSTEM</h1>");
+    } 
 			
 }
 %>
