@@ -49,6 +49,10 @@ public class StudentUI {
 	
 	}
 	
+	public University getUniInfo(String uni)
+	{
+		return studentH.uniInfo(uni);
+	}
 
 
 

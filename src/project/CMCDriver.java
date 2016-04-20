@@ -40,10 +40,10 @@ public class CMCDriver {
 		
 		StudentUI  studentUI= new StudentUI();
 		AdminUI   adminUI= new AdminUI();
-		System.out.println(studentUI.logOn("nicoleK", "imad1234"));
+		System.out.println(studentUI.logOn("nicoleK", "1234"));
 		System.out.print(studentUI.getStudentInfo());
-		//ArrayList<University>uni = studentUI.getSavedUniversity();
-		for(University u: uni)
+		ArrayList<University>uni2 = studentUI.getSavedUniversity();
+		for(University u: uni2)
 		{
 			System.out.println(u);
 		}

@@ -142,6 +142,20 @@ public class StudentHome {
 			ArrayList<University> uniLists = stu.getSavedUniversity();
 			return uniLists;
 		}
+	
+	public University uniInfo(String uni)
+	{
+	   University university = null;
+		for(University u: this.getSavedUniversity())
+		{
+			if(u.getName().equals(uni))
+			{
+				university = u;
+				
+		}
+		}
+			return university;
+	}
 	/**
 	 * Creates a Student with the specified information and calls editStudent from 
 	 * the DBController class
