@@ -70,9 +70,9 @@ public class StudentUI {
  * @param lastname last name to edit
  * @param password password to edit
  */
-	public void editProfile(String firstname, String lastname, String password)
+	public void editProfile(Student s)
 	{
-		studentH.editProfile(firstname,lastname,password);
+		studentH.editProfile(s);
 		
 	}
 /**
@@ -106,5 +106,9 @@ public class StudentUI {
 		return studentH.saveUniversity(u);
 
 }
+	public Student findByUsername(String username)
+	{
+		return studentH.findByUsername(username);
+	}
 }
 

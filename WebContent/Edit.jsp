@@ -1,7 +1,8 @@
 <%@include file="VerifyStudent.jsp"%>
 <%@page language="java" import="project.*"%>
 <title></title>
-<%  Student s = sh.getStudentInfo();%>
+<%  String username = (sh.getStudentInfo()).getUsername();
+  Student s= sh.findByUsername(username);%>
 </head>
 <body>
 <form method="post" action="Edit_action.jsp" name="EditForm">

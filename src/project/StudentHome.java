@@ -82,15 +82,14 @@ public class StudentHome {
 
 	public Student findByUsername(String username) {
 		allStudents = dbl.getStudents();
-		Student student= null;
 		for(Student s: allStudents)
 		{
 			if(s.getUsername().equals(username))
 			{
-				student = s;
+				stu = s;
 			}
 		}
-		return student;
+		return stu;
 	}
 
 	/**
@@ -153,9 +152,9 @@ public class StudentHome {
 	 * 
 	 * @return the result of the editStudent method from the DBController
 	 */
-	public int editProfile(String firstname, String lastname, String password) {
-		return dbl.editStudent(stu.getUsername(), firstname, lastname, password, stu.getType(), stu.getStatus());
-	}
+	public int editProfile(Student s) {
+		return dbl.editStudent(s.getUsername(), s.getFirstName(),s.getLastName(),s.getPassword(),s.getType(), s.getStatus());
+}
 	/**
 	 * Check if the Student corresponding to the specified username is a student by
 	 * calling the similar method in the DBController class
