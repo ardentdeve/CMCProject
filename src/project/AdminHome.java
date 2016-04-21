@@ -27,6 +27,7 @@ public class AdminHome {
 	private ArrayList<Student>allStudents;
 	/** Reference to the DBController*/
 	private DBController dbl = new DBController();
+	private boolean loggedOn= false;
 
 
 /**

@@ -15,7 +15,7 @@ if(value==-1)
         {
         	session.setAttribute("admin",ah);
         	session.setAttribute("admin",ah);
-        	response.sendRedirect("Menu.jsp");
+        	response.sendRedirect("AdminMenu.jsp");
         }
     
 }

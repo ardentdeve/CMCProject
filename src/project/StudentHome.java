@@ -24,6 +24,7 @@ public class StudentHome {
 	private Student stu;
 	/** Reference to the StudentUI */
 	private StudentUI studentUI;
+	private boolean loggedOn= false;
 	
 	
 
@@ -50,7 +51,7 @@ public class StudentHome {
 			{
 				status = 0;
 		
-				this.stu.setLoginStatus(true);
+				this.setLoggedOn(true);
 
 			}
 
@@ -70,6 +71,13 @@ public class StudentHome {
 	public Student getUser()
 	{
 		return this.stu;
+	}
+	
+	/**
+	 * @return the loggedIn
+	 */
+	public boolean isLoggedOn() {
+		return loggedOn;
 	}
 
 	/**
@@ -91,6 +99,14 @@ public class StudentHome {
 		}
 		return stu;
 	}
+	
+	/**
+	 * @param loggedIn
+	 *            the loggedIn to set
+	 */
+	public void setLoggedOn(boolean loggedOn) {
+		this.loggedOn = loggedOn;
+	}
 
 	/**
 	 * Changes this.student's loginStatus to false and clears the current student from this home
@@ -98,8 +114,7 @@ public class StudentHome {
 	 * catches NullPointerException if logOff fails.
 	 */
 	public void logoff() {
-		stu.setLoginStatus(false);
-		stu = null;
+	  this.setLoggedOn(false);
 	}
 	
 

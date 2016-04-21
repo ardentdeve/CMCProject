@@ -54,7 +54,10 @@ public class StudentUI {
 		return studentH.uniInfo(uni);
 	}
 
-
+	public boolean isLoggedOn()
+	{
+		return studentH.isLoggedOn();
+	}
 
 
 
