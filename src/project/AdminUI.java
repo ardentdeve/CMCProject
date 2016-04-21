@@ -22,7 +22,7 @@ public class AdminUI {
 	/** An arrayList of all admins */
 	private ArrayList<Admin>allAdmins;
 	/** Reference to UniversityHome object */
-	private UniversityHome uniH;
+	private UniversityHome uniH = new UniversityHome();
 
 
 
@@ -113,6 +113,11 @@ public class AdminUI {
 	public ArrayList<Student> getStudents()
 	{
 		return adminH.getStudents();
+	}
+	
+	public boolean isLoggedOn()
+	{
+		return adminH.isLoggedOn();
 	}
 
 	/**

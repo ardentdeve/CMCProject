@@ -19,18 +19,8 @@ public class UniversityHome {
 	/** an ArrayList of University objects*/
 	private ArrayList<University> universities;
 	/** an instance of DBController used to retrieve information about Universities*/
-	private DBController dbl;
+	private DBController dbl = new DBController();
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param data the database used in the DBController constructor call
-	 * @param username the username used in the DBController constructor call
-	 * @param password the password used in the DBController constructor call
-	 */
-	public UniversityHome(){
-		dbl= new DBController();
-	}
 
 	/**
 	 * Adds the specified University to the list universities using the database controller

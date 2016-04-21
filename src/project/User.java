@@ -21,8 +21,6 @@ public abstract class User {
 	private String firstName;
 	/** the last name of the User*/
 	private String lastName;
-	/** the login status of the user, showing if they're logged in, true, or not*/
-	private boolean loginStatus;
 	/** the type of the User, s for Student or a for Admin*/
 	private char type;
 	/** the status of User, Y for active or N for disabled*/
@@ -51,7 +49,6 @@ public abstract class User {
 		this.password = password;
 		this.type = type;
 		this.status = status;
-		this.loginStatus = false;
 	}
 	
 	/**
@@ -69,26 +66,9 @@ public abstract class User {
 		this.username = username;
 		this.password = password;
 		this.type = type;
-		this.loginStatus = false;
 	}
 	
-	/**
-	 * returns the loginStatus of this User
-	 * 
-	 * @return loginStatus
-	 */
-	public boolean getlogInStatus() {
-		return loginStatus;
-	}
-	
-	/**
-	 * sets the loginStatus specified to this User
-	 * 
-	 * @param status the loginStatus to set
-	 */
-	public void setLoginStatus(boolean status) {
-		 this.loginStatus = status;
-	}
+
 	
 	/**
 	 * returns the password of this User

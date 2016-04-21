@@ -48,7 +48,7 @@ public class AdminHome {
 			if(admin.getPassword().equals(password))
 			{
 				status = 0;
-				admin.setLoginStatus(true);
+				this.setLoggedOn(true);
 
 			}
 
@@ -60,7 +60,12 @@ public class AdminHome {
 		return -3;
 	}
 }
-
+	/**
+	 * @return the loggedIn
+	 */
+	public boolean isLoggedOn() {
+		return loggedOn;
+	}
 
 
 
@@ -71,9 +76,15 @@ public class AdminHome {
 
 	public void logoff()
 	{
-		admin.setLoginStatus(false);
-		admin = null ;
-
+		 this.setLoggedOn(false);
+	}
+	
+	/**
+	 * @param loggedIn
+	 *            the loggedIn to set
+	 */
+	public void setLoggedOn(boolean loggedOn) {
+		this.loggedOn = loggedOn;
 	}
 
 
