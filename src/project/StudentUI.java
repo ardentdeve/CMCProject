@@ -17,7 +17,8 @@ import java.util.TreeMap;
 
 public class StudentUI {
 	/** Reference to studentHome object */
-	private StudentHome studentH = new StudentHome();;
+	private StudentHome studentH = new StudentHome();
+	private SearchController searchC = new SearchController();
 	/** Reference to student object */
 	private Student student;
 	/** An arrayList of all students */
@@ -57,6 +58,15 @@ public class StudentUI {
 	public boolean isLoggedOn()
 	{
 		return studentH.isLoggedOn();
+	}
+	
+	public ArrayList<University>searchUni(String name, String state, String location, String control,int numberStudentsMin, int numberStudentsMax, 
+			double pctFemaleMin, double pctFemaleMax, double satVerbalMin, double satVerbalMax, double satMathMin, double satMathMax, 
+			double expensesMin, double expensesMax, double pctFinancialAidMin, double pctFinancialAidMax, int numberOfApplicantsMin, 
+			int numberOfApplicantsMax, double pctAdmittedMin, double pctAdmittedMax, double pctEnrolledMin, double pctEnrolledMax, 
+			int AcademicScaleMin, int AcademicScaleMax, int socialScaleMin, int socialScaleMax, int QualityOfLifeScaleMin, int QualityOfLifeScaleMax,ArrayList<String>emphasis)
+	{
+		return searchC.search(name, state, location, control, numberStudentsMin, numberStudentsMax, pctFemaleMin, pctFemaleMax, satVerbalMin, satVerbalMax, satMathMin, satMathMax, expensesMin, expensesMax, pctFinancialAidMin, pctFinancialAidMax, numberOfApplicantsMin, numberOfApplicantsMax, pctAdmittedMin, pctAdmittedMax, pctEnrolledMin, pctEnrolledMax, AcademicScaleMin, AcademicScaleMax, socialScaleMin, socialScaleMax, QualityOfLifeScaleMin, QualityOfLifeScaleMax, emphasis);
 	}
 
 

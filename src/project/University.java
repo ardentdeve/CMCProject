@@ -12,7 +12,7 @@ import java.util.*;
  * @author Ardent Developers
  * @version March, 2016
  */
-public class University {
+public class University implements Comparable<University> {
 
 	/** the name of the University*/
 	private String name;
@@ -27,11 +27,11 @@ public class University {
 	/** the percent of students that are female*/
 	private double pctFemale;
 	/** the average SAT verbal score*/
-	private int satVerbal;
+	private double satVerbal;
 	/** the average SAT math score*/
-	private int satMath;
+	private double satMath;
 	/** the average expenses in a typical year for a student*/
-	private int expenses;
+	private double expenses;
 	/** the percent of students receiving financial aid*/
 	private double pctFinancialAid;
 	/** the number of applicants per year*/
@@ -50,6 +50,7 @@ public class University {
 	private ArrayList<String> emphases;
 	/** a list of Universities with similar qualities*/
 	private List<University> similarUniversities;
+	private double distance;
 
 	/**
 	 * Constructor
@@ -74,7 +75,7 @@ public class University {
 	 * @param similarUniversities the similarUniversities to set
 	 */
 	public University(String name, String state, String location, String control ,int numberStudents, double pctFemale,
-			int satVerbal, int satMath, int expenses, double pctFinancialAid, int numberOfApplicants,
+			double satVerbal, double satMath, double expenses, double pctFinancialAid, int numberOfApplicants,
 			double pctAdmitted, double pctEnrolled, int academicScale, int socialScale, int qualityOfLifeScale,ArrayList<String>emphases) {
 		super();
 		this.name = name;
@@ -94,6 +95,7 @@ public class University {
 		this.socialScale = socialScale;
 		this.qualityOfLifeScale = qualityOfLifeScale;
 		this.emphases = emphases;
+		distance =0;
 	}
 	/**
 	 * Method to set the university for each parameter.
@@ -117,7 +119,7 @@ public class University {
 	 * @param similarUniversities the similarUniversities to set
 	 */
 	public void setUniversity(String name, String state, String location, String control ,int numberStudents, double pctFemale,
-			int satVerbal, int satMath, int expenses, double pctFinancialAid, int numberOfApplicants,
+			double satVerbal,double satMath, double expenses, double pctFinancialAid, int numberOfApplicants,
 			double pctAdmitted, double pctEnrolled, int academicScale, int socialScale, int qualityOfLifeScale, ArrayList<String> emphases) {		
 		this.name = name;
 		this.state = state;
@@ -136,8 +138,17 @@ public class University {
 		this.socialScale = socialScale;
 		this.qualityOfLifeScale = qualityOfLifeScale;
 		this.emphases = emphases;
+		  this.distance =0;
+	}
+	public void setDistance(double value)
+	{
+	this.distance = value;
 	}
 	
+	public double getDistance()
+	{
+		return distance;
+	}
 	/**
 	 * returns the name
 	 * 
@@ -145,6 +156,22 @@ public class University {
 	 */
 	public String getName() {
 		return name;
+	}
+	
+	public int compareTo(University o)
+	{
+		if(this.distance> o.getDistance())
+		{
+			return 1;
+		}
+		else if(this.distance<o.getDistance())
+		{
+		return -1;	
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	/**
@@ -197,7 +224,7 @@ public class University {
 	 * 
 	 * @return the satVerbal
 	 */
-	public int getSatVerbal() {
+	public double getSatVerbal() {
 		return satVerbal;
 	}
 	
@@ -206,7 +233,7 @@ public class University {
 	 * 
 	 * @return the satMath
 	 */
-	public int getSatMath() {
+	public double getSatMath() {
 		return satMath;
 	}
 	
@@ -215,7 +242,7 @@ public class University {
 	 * 
 	 * @return the expenses
 	 */
-	public int getExpenses() {
+	public double getExpenses() {
 		return expenses;
 	}
 	

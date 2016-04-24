@@ -37,14 +37,26 @@ public class UniversityHome {
 	public ArrayList<University> getUniversities(){ 
 		return dbl.getUniversities();
 	}
+	
+	public University getUniInfo(String uni)
+	{
+		University university = null;
+		for(University u: dbl.getUniversities())
+		{
+			if(u.getName().equals(uni))
+			{
+				university = u;
+			}
+		}
+		return university;
+	}
+	
 
 	/**
 	 * Edits the specified Universities information using the DBController class
 	 */
-	public int editUniversities(String name, String state, String location, String control, int numberStudents, double pctFemale, double satVerbal, double satMath, 
-			double expenses, double pctFinancialAid, int numberOfApplicants, double pctAdmitted, double pctEnrolled, int AcademicScale, int socialScale, int QualityOfLifeScale) {
-		return dbl.editUniversity(name, state, location, control, numberStudents, pctFemale, satVerbal, satMath, 
-				 expenses, pctFinancialAid, numberOfApplicants, pctAdmitted, pctEnrolled, AcademicScale, socialScale, QualityOfLifeScale);
+	public int editUniversities(University u) {
+		return dbl.editUniversity(u);
 	}
 
 	/**

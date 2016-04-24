@@ -100,6 +100,7 @@ public class StudentHome {
 		return stu;
 	}
 	
+	
 	/**
 	 * @param loggedIn
 	 *            the loggedIn to set
