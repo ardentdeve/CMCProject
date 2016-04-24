@@ -138,7 +138,11 @@ public class AdminUI {
 		return uniH.addUniversityToList(u);
 		
 	}
-
+	
+	public University getSpecificUni(String uni)
+	{
+		return uniH.getUniInfo(uni);
+	}
 	/**
 	 * Calls universityHome to get all Universities
 	 */
@@ -151,12 +155,10 @@ public class AdminUI {
  * @param u university to be edited
  * @return value of 1 if true
  */
-	public int editUniversities(String name, String state, String location, String control, int numberStudents, double pctFemale, double satVerbal, double satMath, 
-			double expenses, double pctFinancialAid, int numberOfApplicants, double pctAdmitted, double pctEnrolled, int AcademicScale, int socialScale, int QualityOfLifeScale)
+	public int editUniversities(University u)
 	{
 		
-		return uniH.editUniversities(name, state, location, control, numberStudents, pctFemale, satVerbal, satMath, 
-					 expenses, pctFinancialAid, numberOfApplicants, pctAdmitted, pctEnrolled, AcademicScale, socialScale, QualityOfLifeScale);
+		return uniH.editUniversities(u); 
 	}
 
 }

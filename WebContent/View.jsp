@@ -6,6 +6,8 @@
 <%
     String university = request.getParameter("University");
     University u = sh.getUniInfo(university);
+    ArrayList<String>Emphases = u.getEmphases();
+ 
 %>
 <table style="text-align: left; width: 815px; height: 480px;" border="1"
 cellpadding="2" cellspacing="2">
@@ -107,11 +109,18 @@ cellpadding="2" cellspacing="2">
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">EMPHASES<br>
+
+<td colspan="1" rowspan="7" style="vertical-align: top;">EMPHASES<br>
 </td>
-<td style="vertical-align: top;"><br><%=u.getEmphases()%>
+<% 
+ for(int i =0;i<Emphases.size(); i++)
+    {   
+       String emphases1 = Emphases.get(i);
+   %> 
+<td style="vertical-align: top;"><br><%=emphases1%>
 </td>
 </tr>
+<%}%>
 <tr>
 <td style="vertical-align: top;">
 <form action="SavedSchool.jsp" name="ReturnForm"><input name="Return"

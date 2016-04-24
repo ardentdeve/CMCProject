@@ -6,7 +6,7 @@
 </head>
 <body>
 <form method="post" action="Edit_action.jsp" name="EditForm">
-<table style="text-align: left; width: 295px; height: 192px;"
+<table style="text-align: left; width: 1043px; height: 718px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>

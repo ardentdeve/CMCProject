@@ -23,6 +23,7 @@ if(anyErrors!=null)
 %>
 </head>
 <body>
+<h1>WELCOME TO CMC </h1>
 <form method="post" action="Login-action.jsp" name="LoginForm">
 <table style="text-align: left; width: 601px; height: 117px;"
 border="1" cellpadding="2" cellspacing="2">

@@ -84,13 +84,10 @@ public class DBController {
 	 * @param u University to be edited
 	 * @return 1 if the school is successfully edited, -1 otherwise
 	 */
-	public int editUniversity(String name, String state, String location, String control, int numberStudents, 
-			double pctFemale, double satVerbal, double satMath, double expenses, double pctFinancialAid, 
-			int numberOfApplicants, double pctAdmitted, double pctEnrolled, int AcademicScale, int socialScale, 
-			int QualityOfLifeScale) {
+	public int editUniversity(University u) {
 		
-		return univDBlib.university_editUniversity(name, state, location, control, numberStudents, pctFemale, satVerbal, satMath, 
-			 expenses, pctFinancialAid, numberOfApplicants, pctAdmitted, pctEnrolled, AcademicScale, socialScale, QualityOfLifeScale);
+		return univDBlib.university_editUniversity(u.getName(), u.getState(),u.getLocation(),u.getControl(),u.getNumberStudents(),u.getPctFemale(), u.getSatVerbal(),u.getSatMath(), 
+			 u.getExpenses(), u.getPctFinancialAid(), u.getNumberOfApplicants(),u.getPctAdmitted(), u.getPctEnrolled(), u.getAcademicScale(),u.getSocialScale(),u.getQualityOfLifeScale());
 	}
 
 	/**
