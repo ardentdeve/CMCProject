@@ -25,6 +25,10 @@ public abstract class User {
 	private char type;
 	/** the status of User, Y for active or N for disabled*/
 	private char status;
+	private int trials;
+	
+	
+	
 	
 	/**
 	 * Constructor.
@@ -49,6 +53,7 @@ public abstract class User {
 		this.password = password;
 		this.type = type;
 		this.status = status;
+		this.trials=0;
 	}
 	
 	/**
@@ -66,6 +71,7 @@ public abstract class User {
 		this.username = username;
 		this.password = password;
 		this.type = type;
+		this.trials = 0;
 	}
 	
 
@@ -87,6 +93,16 @@ public abstract class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public void setTrials(int value)
+	{
+		this.trials = value;
+	}
+	
+	public int getTrials(int value)
+	{
+		return trials;
 	}
 
 

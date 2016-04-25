@@ -14,7 +14,7 @@ cellspacing="2">
 <tr align="center">
 
 <td colspan="17" rowspan="1" style="vertical-align: top;"><a
-href="Add.jsp">ADD A NEW UNIVERSITY</a><br>
+href="AddUniversity.jsp">ADD A NEW UNIVERSITY</a><br>
 </td>
 </tr>
 <tr>

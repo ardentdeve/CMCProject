@@ -124,11 +124,15 @@ cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">
 <form action="SavedSchool.jsp" name="ReturnForm"><input name="Return"
-value="Return" type="submit"><br>
+value="Return to Saved School " type="submit"><br>
 </form>
 <br>
 </td>
-<td style="vertical-align: top;"><br>
+<td style="vertical-align: top;">
+<form action="Menu.jsp" name="Return"><input name="Return"
+value="Return to Menu" type="submit"><br>
+</form>
+<br>
 </td>
 </tr>
 </tbody>

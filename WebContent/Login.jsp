@@ -5,18 +5,18 @@ if(anyErrors!=null)
 {
 	if(anyErrors.equals("-1"))
 	{
-		out.println("username invalid");
+		out.println("The username or password you entered does not match any account");
 	}
 	else if(anyErrors.equals("-2"))
 	{
-		out.println("password invalid");
+		out.println("The username or password you entered does not match any account");
 	}
 	else if(anyErrors.equals("-3"))
 	{
 		out.println("database error");
 	}
 	else if (anyErrors.equals("-4")){
-        out.println("<h1>YOU MUST BE LOGGED IN TO ACCESS SYSTEM</h1>");
+        out.println("<h1>LOG IN TO ACCESS PAGE</h1>");
     } 
 			
 }
