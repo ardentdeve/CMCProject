@@ -106,6 +106,11 @@ public class AdminUI {
 			return adminH.editAdmin(admin);
 	
 	}
+	
+	public ArrayList<User> getUsers()
+	{
+		return adminH.getUsers();
+	}
 
 	/**
 	 * Calls studentHome to get all Students

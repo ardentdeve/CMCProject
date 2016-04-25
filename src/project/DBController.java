@@ -169,6 +169,19 @@ public class DBController {
 		}
 		return listAdmin;
 	}
+	
+	public ArrayList<User> getUsers() { 
+		String arrayUser[][]= univDBlib.user_getUsers();
+		ArrayList<User> listUser= new ArrayList<User>();
+		for(int i=0;i< arrayUser.length;i++) {
+			{
+				listUser.add(new Admin(arrayUser[i][0],arrayUser[i][1],arrayUser[i][2],
+						arrayUser[i][3],arrayUser[i][4].charAt(0),arrayUser[i][5].charAt(0)));
+			}
+		}
+		return listUser;
+	}
+
 
 	/**
 	 * Returns a list containing all usernames along with their saved schools in the database.

@@ -199,6 +199,11 @@ public class AdminHome {
 		return dbl.getStudents();
 		
 	}
+	public ArrayList<User> getUsers()
+	{
+		return dbl.getUsers();
+		
+	}
 
 	/**
 	 * checks if the current user is an Admin
