@@ -25,8 +25,8 @@ public class StudentHome {
 	/** Reference to the StudentUI */
 	private StudentUI studentUI;
 	private boolean loggedOn= false;
-	
-	
+
+
 
 	/**
 	 * Takes a Student's username and password and confirms they are a Student. Then finds the Student
@@ -40,39 +40,39 @@ public class StudentHome {
 
 	public int login(String username, String password)
 	{
-		
+
 		int status = -1;
 		try{
-		if(this.isUserStudent(username))
-		{
-			status = -2; 
-			stu= this.findByUsername(username);
-			if(stu.getPassword().equals(password))
+			if(this.isUserStudent(username))
 			{
-				status = 0;
-		
-				this.setLoggedOn(true);
+				status = -2; 
+				stu= this.findByUsername(username);
+				if(stu.getPassword().equals(password))
+				{
+					status = 0;
+
+					this.setLoggedOn(true);
+
+				}
 
 			}
-
+			return status;
 		}
-          return status;
+		catch(Exception e)
+		{
+			return -3;
+		}
 	}
-	catch(Exception e)
-	{
-		return -3;
-	}
-}
 	public int deleteStudent(Student s)
 	{
 		return dbl.deleteStudent(s.getUsername());
 	}
-	
+
 	public Student getUser()
 	{
 		return this.stu;
 	}
-	
+
 	/**
 	 * @return the loggedIn
 	 */
@@ -99,8 +99,8 @@ public class StudentHome {
 		}
 		return stu;
 	}
-	
-	
+
+
 	/**
 	 * @param loggedIn
 	 *            the loggedIn to set
@@ -115,9 +115,9 @@ public class StudentHome {
 	 * catches NullPointerException if logOff fails.
 	 */
 	public void logoff() {
-	  this.setLoggedOn(false);
+		this.setLoggedOn(false);
 	}
-	
+
 
 	/**
 	 * Adds a student to the allStudents list
@@ -153,24 +153,24 @@ public class StudentHome {
 	 * prints the saved schools of the current students saved schools list
 	 */
 	public ArrayList<University> getSavedUniversity() {
-			ArrayList<University> savedSchool= dbl.getSavedSchool(stu.getUsername());
-			stu.setSavedUni(savedSchool);
-			ArrayList<University> uniLists = stu.getSavedUniversity();
-			return uniLists;
-		}
-	
+		ArrayList<University> savedSchool= dbl.getSavedSchool(stu.getUsername());
+		stu.setSavedUni(savedSchool);
+		ArrayList<University> uniLists = stu.getSavedUniversity();
+		return uniLists;
+	}
+
 	public University uniInfo(String uni)
 	{
-	   University university = null;
+		University university = null;
 		for(University u: this.getSavedUniversity())
 		{
 			if(u.getName().equals(uni))
 			{
 				university = u;
-				
+
+			}
 		}
-		}
-			return university;
+		return university;
 	}
 	/**
 	 * Creates a Student with the specified information and calls editStudent from 
@@ -184,7 +184,7 @@ public class StudentHome {
 	 */
 	public int editProfile(Student s) {
 		return dbl.editStudent(s.getUsername(), s.getFirstName(),s.getLastName(),s.getPassword(),s.getType(), s.getStatus());
-}
+	}
 	/**
 	 * Check if the Student corresponding to the specified username is a student by
 	 * calling the similar method in the DBController class

@@ -148,6 +148,18 @@ public class AdminUI {
 	{
 		return uniH.getUniInfo(uni);
 	}
+	
+	public Admin getSpecificAdmin(String username){
+		return adminH.findAdmin(username);
+	}
+	
+	public Student getSpecificStudent(String username){
+		return studentH.findByUsername(username);
+	}
+	
+	public boolean isAdmin(String username){
+		return adminH.isUserAdmin(username);
+	}
 	/**
 	 * Calls universityHome to get all Universities
 	 */
